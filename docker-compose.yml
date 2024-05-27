@@ -35,7 +35,7 @@ services:
   grafana:
     image: devlake.docker.scarf.sh/apache/devlake-dashboard:v1.0.0-beta7   
     ports:
-      - 3002:3000
+      - 3002:3008
     volumes:
       - grafana-storage:/var/lib/grafana
     environment:
