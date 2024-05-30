@@ -16,12 +16,12 @@ pipeline {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
+        sh 'mvn clean package'
       }
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://192.168.10.13:9000/"
+        SONAR_URL = "http://192.168.10.19:9000/"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
