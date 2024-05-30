@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Static Code Analysis') {
             environment {
-                SONAR_URL = "http://192.168.10.13:9000/"
+                SONAR_URL = "http://192.168.10.19:9000/"
             }
             steps {
                 withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Update Deployment File') {
             environment {
-                GIT_REPO_NAME = "Jenkins"
+                GIT_REPO_NAME = "Apache-DevLake"
                 GIT_USER_NAME = "Hemalatha0411"
             }
             steps {
