@@ -16,7 +16,7 @@
 version: "3"
 services:
   mysql:
-    image: mysql:8
+    image: mysql:6
     volumes:
       - mysql-storage:/var/lib/mysql
     restart: always
@@ -51,7 +51,7 @@ services:
       - mysql
 
   devlake:
-    image: devlake.docker.scarf.sh/apache/devlake:v1.0.0-beta7   
+    image: devlake.docker.scarf.sh/apache/devlake:v1.0.0-beta8  
     ports:
       - 8080:8080
     restart: always
